@@ -1,0 +1,49 @@
+/* ===== Tmoh Sky • gentle animated cloud portal ===== */
+:root{--tmoh-sky-a:#5767ef;--tmoh-sky-b:#925ee9;--tmoh-sky-c:#22c0cb}
+#auth.auth{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(155deg,#f5f7ff 8%,#ecedff 55%,#e2f6fa 100%)}
+#auth .art{position:relative;z-index:1;background:radial-gradient(circle at 82% 17%,#ffffff50,transparent 30%),linear-gradient(140deg,#3442bb,#6068df 52%,#a87be7);overflow:hidden}
+#auth .art:before{content:"";position:absolute;inset:auto -28% -18% -30%;height:64%;background:radial-gradient(ellipse at 45% 35%,#c0e9ff77,transparent 62%);pointer-events:none}
+#auth .art h1{position:relative;text-shadow:0 9px 25px #182f6c66}
+#auth .art .logo{font-size:clamp(24px,3vw,34px);letter-spacing:.5px}
+#auth .authform{position:relative;z-index:2;border-radius:24px;padding:27px 27px 23px;background:color-mix(in srgb,var(--card) 96%,transparent);box-shadow:0 24px 70px #3047a321;border:1px solid #ffffffaa;margin-block:auto;backdrop-filter:blur(16px)}
+#auth .authform h2{color:var(--text);line-height:1.45}
+#auth .authform .primary{box-shadow:0 10px 25px #445cbb45}
+.tmoh-auth-clouds{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.tmoh-deco-cloud,.tmoh-portal-cloud{position:absolute;display:block;width:200px;height:62px;background:#fff;border-radius:100px;box-shadow:0 15px 38px #647bc822}
+.tmoh-deco-cloud:before,.tmoh-deco-cloud:after,.tmoh-portal-cloud:before,.tmoh-portal-cloud:after{content:"";position:absolute;background:inherit;border-radius:50%}
+.tmoh-deco-cloud:before,.tmoh-portal-cloud:before{width:90px;height:90px;left:31px;bottom:11px}
+.tmoh-deco-cloud:after,.tmoh-portal-cloud:after{width:115px;height:112px;right:20px;bottom:7px}
+.tmoh-deco-cloud.c1{top:6%;left:26%;transform:scale(.76);opacity:.16;animation:tmoh-drift-a 17s ease-in-out infinite alternate}
+.tmoh-deco-cloud.c2{top:25%;right:2%;transform:scale(.45);opacity:.33;animation:tmoh-drift-b 19s ease-in-out infinite alternate}
+.tmoh-deco-cloud.c3{bottom:23%;right:32%;transform:scale(.8);opacity:.22;animation:tmoh-drift-b 22s ease-in-out infinite alternate}
+.tmoh-deco-cloud.c4{bottom:8%;left:-3%;transform:scale(.55);opacity:.20;animation:tmoh-drift-a 16s ease-in-out infinite alternate}
+@keyframes tmoh-drift-a{from{translate:-13px 0}to{translate:19px -13px}}
+@keyframes tmoh-drift-b{from{translate:20px -5px}to{translate:-25px 10px}}
+.tmoh-credits{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;font-size:12px;line-height:1.9}
+.tmoh-credits span{padding:6px 11px;border:1px solid var(--line);background:var(--pale);border-radius:999px;white-space:normal}
+.tmoh-credits b{color:var(--blue)}
+.tmoh-credits-auth{position:absolute;inset:auto 15px 9px 15px;z-index:4;color:#192b62}
+.tmoh-credits-auth span{background:#ffffffd9;border-color:#ffffff99}
+.tmoh-credits-footer{margin:7px auto 0;font-size:11px}
+.tmoh-footer-brand{font-weight:700}
+.tmoh-sky-portal{position:fixed;inset:0;z-index:9998;pointer-events:none;overflow:hidden;isolation:isolate;background:radial-gradient(circle at 50% 45%,#e4faffb8 0%,#99b9fbaa 35%,#5365c4ab 80%);animation:tmoh-portal-fade 1.16s ease-out both}
+.tmoh-portal-halo{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle,#fffffff0 0%,#d2ebffe8 18%,#b6caff7d 41%,transparent 69%);animation:tmoh-halo 1.14s ease-in both}
+.tmoh-portal-cloud{width:280px;height:92px;box-shadow:0 24px 60px #2c51a32a;filter:drop-shadow(0 10px 17px #6492d155);animation:tmoh-cloud-flight 1.1s cubic-bezier(.17,.62,.16,1) both;--start-x:0px;--start-y:0px;--angle:0deg;--delay:0s;animation-delay:var(--delay)}
+.tmoh-portal-cloud:before{width:135px;height:126px;left:38px;bottom:15px}.tmoh-portal-cloud:after{width:165px;height:154px;right:25px;bottom:13px}
+.tmoh-portal-cloud.one{top:7%;left:0%;--start-x:-43vw;--start-y:-20vh;--angle:-22deg;--delay:.02s}
+.tmoh-portal-cloud.two{top:4%;right:0%;--start-x:43vw;--start-y:-24vh;--angle:22deg;--delay:.05s}
+.tmoh-portal-cloud.three{top:43%;left:10%;--start-x:-40vw;--start-y:9vh;--angle:13deg;--delay:.00s}
+.tmoh-portal-cloud.four{top:48%;right:9%;--start-x:42vw;--start-y:8vh;--angle:-12deg;--delay:.04s}
+.tmoh-portal-cloud.five{bottom:5%;left:14%;--start-x:-32vw;--start-y:29vh;--angle:17deg;--delay:.06s}
+.tmoh-portal-cloud.six{bottom:4%;right:16%;--start-x:31vw;--start-y:24vh;--angle:-14deg;--delay:.03s}
+.tmoh-portal-glint{position:absolute;top:49%;left:50%;font-size:68px;color:#fff;text-shadow:0 0 35px #fff;animation:tmoh-glint 1s ease-in both}
+@keyframes tmoh-cloud-flight{0%{transform:translate(var(--start-x),var(--start-y)) rotate(var(--angle)) scale(2.4);opacity:0}23%{opacity:.96}58%{opacity:.88}100%{transform:translate(calc(50vw - 50% - 25vw),calc(45vh - 50%)) scale(.04) rotate(0);opacity:0}}
+@keyframes tmoh-halo{0%{transform:scale(2.6);opacity:.1}30%{opacity:.85}100%{transform:scale(.05);opacity:0}}
+@keyframes tmoh-glint{0%,65%{transform:translate(-50%,-50%) scale(.2);opacity:0}80%{opacity:1}100%{transform:translate(-50%,-50%) scale(1.6);opacity:0}}
+@keyframes tmoh-portal-fade{0%{opacity:0}15%{opacity:1}78%{opacity:.93}100%{opacity:0;visibility:hidden}}
+body.dark #auth.auth{background:#111827}
+body.dark #auth .authform{background:#202946e8;border-color:#445174}
+body.dark .tmoh-credits-auth span{background:#202946ee;border-color:#5365a2;color:#edf0ff}
+@media(max-width:900px){#auth .authform{width:min(430px,92%)}.tmoh-credits-auth{font-size:10px}}
+@media(max-width:680px){#auth.auth{overflow:auto;min-height:100dvh;padding:20px 10px 105px}#auth .authform{width:min(500px,100%);padding:25px 17px;margin:32px auto 10px}#auth .authform .mobile{display:block} .tmoh-credits-auth{bottom:11px;left:8px;right:8px;position:absolute;gap:6px;font-size:10px}.tmoh-credits-auth span{padding:5px 7px}.tmoh-deco-cloud.c1{left:7%}.tmoh-deco-cloud.c3{right:-16%}.tmoh-portal-cloud{width:210px;transform-origin:center}}
+@media(prefers-reduced-motion:reduce){.tmoh-deco-cloud,.tmoh-sky-portal,.tmoh-portal-cloud,.tmoh-portal-halo,.tmoh-portal-glint{animation:none!important}.tmoh-sky-portal{display:none!important}}
